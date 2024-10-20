@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avis des lecteurs</title>
+</head>
+<body>
+<h1>Laissez votre avis</h1>
+<form id="avisForm">
+  <label for="avis">Votre avis :</label><br>
+  <textarea id="avis" name="avis" rows="4" cols="50"></textarea><br><br>
+  <input type="submit" value="Envoyer">
+</form>
+<script>
+    document.getElementById("avisForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  let avis = document.getElementById("avis").value;
+  let mailToLink = "mailto:mahudjroaureliensaizonou@gmail.com?subject=Avis%20lecteur&body=" + encodeURI(avis);
+  window.location.href = mailToLink;
+});
+
+</script>
+</body>
+</html>
